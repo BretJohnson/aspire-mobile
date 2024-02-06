@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Library\Library.csproj" />
+    <ProjectReference Include="..\..\src\MauiAspire\MauiAspire.csproj" />
   </ItemGroup>
 
   <ItemGroup>

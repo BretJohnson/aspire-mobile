@@ -1,7 +1,7 @@
-﻿// Copyright (c) COMPANY-PLACEHOLDER. All rights reserved.
+// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-using Library;
+using MauiAspire;
 using Xunit;
 
 public class CalculatorTests
