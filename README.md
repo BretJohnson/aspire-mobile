@@ -10,11 +10,11 @@ your feedback.
 
 ## Creating a new MAUI+Aspire project
 
-Current status (to set expectations): The NuGets aren't published quite yet and we're still fixing some things.
+**_Current status (to set expectations):_**
+The NuGets aren't published quite yet and we're still fixing some things.
 
 
-
-Install the templates
+Install the templates:
 ```
 dotnet new install MauiAspire.ProjectTemplates
 ```
@@ -25,12 +25,16 @@ or create a project from the CLI:
 ```
 dotnet new maui-aspire -n MyApp
 ```
+
 ## Usage
 
+Launch `MyApp.AppHost` project to start any Aspire managed servies and the
+Aspire dashboard.
 
+Launching AppHost the first time will also generate the `AspireAppSettings.g.cs` file in the MauiApp source directory.
+Normally Aspire passess configuration settings as environment variables when launching services/clients, but for MAUI
+apps (at least today) those settings are instead generated here and included in the app at build time.
 
-
-
-
-
-## Consumption
+Once AppHost is running, then launch the `MyApp` project to run the MAUI app itself. Hit the Load Weather button and
+you should see the MAUI app fetch weather data from the minimal API service running on your desktop, with activity across
+all services and the MAUI client itself tracked in the Aspire dashboard.
