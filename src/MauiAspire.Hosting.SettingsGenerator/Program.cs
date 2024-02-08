@@ -47,7 +47,7 @@ internal class Program
         using (StreamWriter file = new StreamWriter(settingsPath))
         {
             file.Write("""
-                    // This file is generated from the Aspire AppHost project. Re-run the Aspre AppHost
+                    // This file is generated from the Aspire AppHost project. Rerun the Aspire AppHost
                     // to regenerate it.
                     
                     public static class AspireAppSettings
