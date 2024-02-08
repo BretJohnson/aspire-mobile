@@ -30,6 +30,7 @@
     "DB7A3AC1-6E4F-4805-B710-2FCD1084E96E",
     "9FEB877E-015D-4E20-AE63-06C596E242E4",
     "AC2DB38C-F5AD-4CEF-BC4C-04AE6EE86C9F",
+    "8757E021-D0C4-4DAD-836D-4C5F3F8350BA",
     "EB6E56D3-85C9-43D0-A65C-775F4C780950"
   ],
   "sources": [
@@ -266,6 +267,37 @@
       "datatype": "bool",
       "defaultValue": "true",
       "description": "Whether to turn off HTTPS."
+    },
+
+    "applicationId": {
+      "type": "parameter",
+      "description": "Overrides the $(ApplicationId) in the project",
+      "datatype": "string"
+    },
+    "defaultAppId": {
+      "type": "generated",
+      "generator": "join",
+      "parameters": {
+        "symbols": [
+          {
+            "type": "const",
+            "value": "com.companyname."
+          },
+          {
+            "type": "ref",
+            "value": "nameToAppId"
+          }
+        ]
+      }
+    },
+    "finalAppId": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "applicationId",
+        "fallbackVariableName": "defaultAppId"
+      },
+      "replaces": "com.companyname.mauiapp"
     }
   },
   "primaryOutputs": [
@@ -284,6 +316,9 @@
     },
     {
       "path": "AspireStarterApplication.1.Web\\AspireStarterApplication.1.Web.csproj"
+    },
+    {
+      "path": "AspireStarterApplication.1.MauiApp\\AspireStarterApplication.1.MauiApp.csproj"
     }
   ],
   "postActions": [
