@@ -1,6 +1,6 @@
 ﻿<!-- Adapted from https://github.com/dotnet/aspire/blob/07b13d47cd052c271d4ed73072668c774f8dd63c/src/Aspire.ProjectTemplates/Aspire.ProjectTemplates.csproj -->
 
-<Project Sdk="Microsoft.NET.Sdk" InitialTargets="AddTemplatesToPackageAsContent">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -13,15 +13,17 @@
     <NoWarn>$(NoWarn);NU5128</NoWarn>
     <EnableDefaultItems>false</EnableDefaultItems>
     <Description>.NET MAUI Aspire Template Pack for Microsoft Template Engine</Description>
+    <AspireVersion>8.0.0-preview.2.23619.3</AspireVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="templates\**\*" />
   </ItemGroup>
 
-  <!-- When building a package, this target will run to copy all the templates into the intermediate directory, 
+  <!-- When building a package, this target will run to copy all the templates into the intermediate directory,
        replaces the package versions, and adds them to the package.-->
-  <Target Name="AddTemplatesToPackageAsContent" DependsOnTargets="ReplacePackageVersionOnTemplates">
+  <!-- MauiAspire update: Use BeforeTargets="BeforeBuild" instead of Project InitialTargets to workaround https://github.com/dotnet/msbuild/issues/5178 -->
+  <Target Name="AddTemplatesToPackageAsContent" DependsOnTargets="ReplacePackageVersionOnTemplates" BeforeTargets="BeforeBuild">
 
     <!-- Creating a temporary item instead of defining content items directly in order to avoid MSBuild MSB4120
     message shown when an item within a target references itself which may cuase unintended expansion. -->
@@ -34,8 +36,8 @@
   </Target>
 
   <!-- Replaces the versions referenced by the templates projects to use the version of the packages being live-built -->
-  <Target Name="ReplacePackageVersionOnTemplates" DependsOnTargets="CopyTemplatesToIntermediateOutputPath">
-    
+  <Target Name="ReplacePackageVersionOnTemplates" DependsOnTargets="CopyTemplatesToIntermediateOutputPath;GetBuildVersion">
+
     <ItemGroup>
       <TemplateProjectFiles Include="templates\**\*.csproj" />
       <TemplateProjectFiles>
@@ -43,7 +45,7 @@
       </TemplateProjectFiles>
     </ItemGroup>
 
-    <WriteLinesToFile File="%(TemplateProjectFiles.DestinationFile)" Lines="$([System.IO.File]::ReadAllText('%(TemplateProjectFiles.FullPath)')&#xD;&#xA;                                                 .Replace('!!REPLACE_WITH_LATEST_VERSION!!', '$(PackageVersion)')&#xD;&#xA;                                                 .Replace('!!REPLACE_WITH_EXTENSIONS_VERSION!!', '$(MicrosoftExtensionsHttpResiliencePackageVersion)'))" Overwrite="true" />
+    <WriteLinesToFile File="%(TemplateProjectFiles.DestinationFile)" Lines="$([System.IO.File]::ReadAllText('%(TemplateProjectFiles.FullPath)')&#xD;&#xA;                                                 .Replace('!!REPLACE_WITH_LATEST_VERSION!!', '$(PackageVersion)')&#xD;&#xA;                                                 .Replace('!!REPLACE_WITH_ASPIRE_VERSION!!', '$(AspireVersion)')&#xD;&#xA;                                                 .Replace('!!REPLACE_WITH_EXTENSIONS_VERSION!!', '$(MicrosoftExtensionsHttpResiliencePackageVersion)'))" Overwrite="true" />
   </Target>
 
   <!-- Grabs the contents of the templates folder and copies them to IntermediateOutputPath directory -->
