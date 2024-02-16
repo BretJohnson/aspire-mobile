@@ -36,6 +36,4 @@ jobs:
     parameters:
       initArgs: -NoRestore
   - template: publish-symbols.yml
-  - ${{ if parameters.RunTests }}:
-    - template: publish-codecoverage.yml
   - template: publish-deployables.yml
