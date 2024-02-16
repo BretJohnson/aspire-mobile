@@ -10,6 +10,10 @@ trigger:
     - '*.md'
     - .vscode/
 
+pr:
+- main
+- 'validate/*'
+
 parameters:
 - name: RunTests
   displayName: Run tests
