@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿// Copyright (c) Microsoft. All rights reserved.
+// Licensed under the MIT license.
+
+using System.Collections;
 
 namespace Aspire.MAUIAppHost;
 
@@ -24,7 +27,8 @@ internal class Program
 
     static void WriteSettings(IDictionary environmentVariables, string settingsPath)
     {
-        var variablesToInclude = new HashSet<string> {
+        var variablesToInclude = new HashSet<string>
+        {
             "ASPNETCORE_ENVIRONMENT",
             "ASPNETCORE_URLS",
             "DOTNET_ENVIRONMENT",
@@ -42,6 +46,7 @@ internal class Program
                 variableNames.Add(variableName);
             }
         }
+
         variableNames.Sort();
 
         using (StreamWriter file = new StreamWriter(settingsPath))

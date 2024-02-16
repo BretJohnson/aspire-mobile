@@ -5,7 +5,7 @@ namespace MauiAspire.App;
 
 internal class MauiHostEnvironment : IHostEnvironment
 {
-    public string ApplicationName { get; set; } = typeof(MauiHostEnvironment).Assembly.GetName().Name;
+    public string ApplicationName { get; set; } = typeof(MauiHostEnvironment).Assembly.GetName().Name!;
 
     public IFileProvider ContentRootFileProvider { get; set; } = new PhysicalFileProvider(AppContext.BaseDirectory);
 
