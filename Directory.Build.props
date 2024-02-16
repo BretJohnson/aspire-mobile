@@ -11,7 +11,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <AnalysisLevel>latest</AnalysisLevel>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <!-- <GenerateDocumentationFile>true</GenerateDocumentationFile> -->
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
 
     <!-- https://github.com/dotnet/msbuild/blob/main/documentation/ProjectReference-Protocol.md#setplatform-negotiation -->
@@ -30,7 +30,7 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)strongname.snk</AssemblyOriginatorKeyFile>
 
-    <!-- <PackageProjectUrl>https://github.com/ORG/REPO</PackageProjectUrl> -->
+    <PackageProjectUrl>https://github.com/BretJohnson/maui-aspire</PackageProjectUrl>
     <Company>Microsoft</Company>
     <Authors>Microsoft</Authors>
     <Copyright>© Microsoft. All rights reserved.</Copyright>
@@ -40,10 +40,6 @@
     <IncludeSymbols Condition=" '$(DebugType)' != 'embedded' ">true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
-
-  <ItemGroup>
-    <AdditionalFiles Include="$(MSBuildThisFileDirectory)stylecop.json" Link="stylecop.json" />
-  </ItemGroup>
 
   <ItemDefinitionGroup>
     <!-- We always want MSBuild properties generated that point at the restored location of each package. -->
