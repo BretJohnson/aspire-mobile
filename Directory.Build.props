@@ -37,7 +37,8 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <IncludeSymbols Condition=" '$(DebugType)' != 'embedded' ">true</IncludeSymbols>
+    <!-- TODO: Change this back to true when fix packaging-->
+    <IncludeSymbols Condition=" '$(DebugType)' != 'embedded' ">false</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
