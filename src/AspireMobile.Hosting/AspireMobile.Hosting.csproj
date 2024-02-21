@@ -1,13 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <IsPackable>true</IsPackable>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aspire.Hosting" />
+    <Content Include="contentFiles/**/*.*">
+      <Pack>true</Pack>
+      <PackagePath>contentFiles;content</PackagePath>
+    </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting" />
+  </ItemGroup>
+    
 </Project>

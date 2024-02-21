@@ -13,9 +13,9 @@ public static class MobileProjectResourceBuilderExtension
         string settingsFileName = "AspireAppSettings.g.cs")
     {
         string settingsPath = NormalizePathForCurrentPlatform(Path.Combine(builder.AppHostDirectory, projectDirectory, settingsFileName));
-        string mauiAppHostPath = NormalizePathForCurrentPlatform(Path.Combine(builder.AppHostDirectory, "../Aspire.MobileAppHost/Aspire.MobileAppHost.csproj"));
+        string mauiAppHostPath = NormalizePathForCurrentPlatform(Path.Combine(builder.AppHostDirectory, "../AspireMobile.Hosting.SettingsGenerator/AspireMobile.Hosting.SettingsGenerator.csproj"));
 
-        return builder.AddProject(name, "../Aspire.MobileAppHost/Aspire.MobileAppHost.csproj")
+        return builder.AddProject(name, "../AspireMobile.Hosting.SettingsGenerator/AspireMobile.Hosting.SettingsGenerator.csproj")
            .WithEnvironment(context =>
            {
                context.EnvironmentVariables.Add("ASPIRE_SETTINGS_PATH", settingsPath);
