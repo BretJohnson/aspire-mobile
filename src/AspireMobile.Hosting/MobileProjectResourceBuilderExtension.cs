@@ -1,6 +1,6 @@
 ﻿namespace Aspire.Hosting;
 
-public static class MauiProjectResourceBuilderExtension
+public static class MobileProjectResourceBuilderExtension
 {
     /// <summary>
     /// Adds a .NET project to the application model. 
@@ -9,13 +9,13 @@ public static class MauiProjectResourceBuilderExtension
     /// <param name="name">The name of the resource. This name will be used for service discovery when referenced in a dependency.</param>
     /// <param name="projectDirectory">The path to the project file.</param>
     /// <returns>A reference to the <see cref="IResourceBuilder{ProjectResource}"/>.</returns>
-    public static IResourceBuilder<ProjectResource> AddMauiProject(this IDistributedApplicationBuilder builder, string name, string projectDirectory,
+    public static IResourceBuilder<ProjectResource> AddMobileProject(this IDistributedApplicationBuilder builder, string name, string projectDirectory,
         string settingsFileName = "AspireAppSettings.g.cs")
     {
         string settingsPath = NormalizePathForCurrentPlatform(Path.Combine(builder.AppHostDirectory, projectDirectory, settingsFileName));
-        string mauiAppHostPath = NormalizePathForCurrentPlatform(Path.Combine(builder.AppHostDirectory, "../Aspire.MAUIAppHost/Aspire.MAUIAppHost.csproj"));
+        string mauiAppHostPath = NormalizePathForCurrentPlatform(Path.Combine(builder.AppHostDirectory, "../Aspire.MobileAppHost/Aspire.MobileAppHost.csproj"));
 
-        return builder.AddProject(name, "../Aspire.MAUIAppHost/Aspire.MAUIAppHost.csproj")
+        return builder.AddProject(name, "../Aspire.MobileAppHost/Aspire.MobileAppHost.csproj")
            .WithEnvironment(context =>
            {
                context.EnvironmentVariables.Add("ASPIRE_SETTINGS_PATH", settingsPath);

@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <PackageReference Include="Aspire.Hosting" Version="!!REPLACE_WITH_ASPIRE_VERSION!!" />
-    <PackageReference Include="MauiAspire.Hosting" Version="!!REPLACE_WITH_LATEST_VERSION!!" />
+    <PackageReference Include="AspireMobile.Hosting" Version="!!REPLACE_WITH_LATEST_VERSION!!" />
   </ItemGroup>
 
 </Project>

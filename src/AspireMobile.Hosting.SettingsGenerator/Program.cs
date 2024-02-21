@@ -3,8 +3,6 @@
 
 using System.Collections;
 
-namespace Aspire.MAUIAppHost;
-
 internal class Program
 {
     public static void Main(string[] args)
@@ -88,4 +86,3 @@ internal class Program
         else return "\"" + value + "\"";
     }
 }
-

@@ -34,9 +34,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{781AA387-FFB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiAspire.App", "src\MauiAspire.App\MauiAspire.App.csproj", "{F257BEFA-72A9-46CE-85B4-34BA745CA753}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiAspire.Hosting", "src\MauiAspire.Hosting\MauiAspire.Hosting.csproj", "{10607B5B-5430-4560-800B-05986D9DD1DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireMobile.Hosting", "src\AspireMobile.Hosting\AspireMobile.Hosting.csproj", "{10607B5B-5430-4560-800B-05986D9DD1DA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiAspire.Hosting.SettingsGenerator", "src\MauiAspire.Hosting.SettingsGenerator\MauiAspire.Hosting.SettingsGenerator.csproj", "{09E69644-F3BA-4E51-87BE-B768F731B5B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireMobile.Hosting.SettingsGenerator", "src\AspireMobile.Hosting.SettingsGenerator\AspireMobile.Hosting.SettingsGenerator.csproj", "{09E69644-F3BA-4E51-87BE-B768F731B5B4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiAspire.ProjectTemplates", "src\MauiAspire.ProjectTemplates\MauiAspire.ProjectTemplates.csproj", "{53E288B2-9431-489D-BA0C-7A2547EE5624}"
 EndProject
