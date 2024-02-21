@@ -30,7 +30,7 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)strongname.snk</AssemblyOriginatorKeyFile>
 
-    <PackageProjectUrl>https://github.com/BretJohnson/maui-aspire</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/BretJohnson/aspire-mobile</PackageProjectUrl>
     <Company>Microsoft</Company>
     <Authors>Microsoft</Authors>
     <Copyright>© Microsoft. All rights reserved.</Copyright>

@@ -4,7 +4,7 @@ pr: none
 resources:
   pipelines:
   - pipeline: CI
-    source: maui-aspire # TODO: This should match the name of your CI pipeline
+    source: aspire-mobile # TODO: This should match the name of your CI pipeline
     trigger:
       tags:
       - auto-release

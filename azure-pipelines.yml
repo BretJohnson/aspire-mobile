@@ -23,7 +23,7 @@ parameters:
 variables:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   BuildConfiguration: Release
-  ci_feed: https://pkgs.dev.azure.com/bretjohn-public/maui-aspire/_packaging/maui-aspire/nuget/v3/index.json  # Azure Artifacts feed URL
+  ci_feed: https://pkgs.dev.azure.com/bretjohn-public/aspire-mobile/_packaging/aspire-mobile/nuget/v3/index.json  # Azure Artifacts feed URL
   NUGET_PACKAGES: $(Agent.TempDirectory)/.nuget/packages/
 
 jobs:
