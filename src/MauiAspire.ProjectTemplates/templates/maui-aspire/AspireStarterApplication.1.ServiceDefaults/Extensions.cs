@@ -42,10 +42,8 @@ public static class Extensions
         builder.Services.AddOpenTelemetry()
             .WithMetrics(metrics =>
             {
-                metrics.AddAspNetCoreInstrumentation()
-                       .AddHttpClientInstrumentation()
-                       .AddProcessInstrumentation()
-                       .AddRuntimeInstrumentation();
+                metrics.AddRuntimeInstrumentation()
+                       .AddBuiltInMeters();
             })
             .WithTracing(tracing =>
             {
@@ -112,4 +110,10 @@ public static class Extensions
 
         return app;
     }
+
+    private static MeterProviderBuilder AddBuiltInMeters(this MeterProviderBuilder meterProviderBuilder) =>
+        meterProviderBuilder.AddMeter(
+            "Microsoft.AspNetCore.Hosting",
+            "Microsoft.AspNetCore.Server.Kestrel",
+            "System.Net.Http");
 }
