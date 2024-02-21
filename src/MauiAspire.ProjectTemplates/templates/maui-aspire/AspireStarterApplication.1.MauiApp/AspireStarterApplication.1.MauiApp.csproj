@@ -77,6 +77,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\AspireStarterApplication.1.ServiceDefaults\AspireStarterApplication.1.ServiceDefaults.csproj" />
+        <ProjectReference Include="..\AspireStarterApplication.1.AppDefaults\AspireStarterApplication.1.AppDefaults.csproj" />
 	</ItemGroup>
 </Project>
