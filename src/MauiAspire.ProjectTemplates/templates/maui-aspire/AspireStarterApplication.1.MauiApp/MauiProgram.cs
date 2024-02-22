@@ -1,7 +1,6 @@
-﻿using AspireAppClientIntegration.MAUI;
+﻿using MauiAspire.App;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace ClientAppsIntegration.MAUI
 {
@@ -20,15 +19,19 @@ namespace ClientAppsIntegration.MAUI
                 });
 
             var wrapperMauiAppBuilder = new WrapperMauiAppBuilder(mauiAppBuilder);
+//-:cnd:noEmit
 #if DEBUG
             wrapperMauiAppBuilder.Configuration.AddInMemoryCollection(AspireAppSettings.Settings);
 #endif
+//+:cnd:noEmit
 
             wrapperMauiAppBuilder.AddAppDefaults();
 
+//-:cnd:noEmit
 #if DEBUG
             wrapperMauiAppBuilder.Logging.AddDebug();
 #endif
+//+:cnd:noEmit
 
             var scheme = wrapperMauiAppBuilder.Environment.IsDevelopment() ? "http" : "https";
             wrapperMauiAppBuilder.Services.AddHttpClient<WeatherApiClient>(client => client.BaseAddress = new($"{scheme}://apiservice"));
