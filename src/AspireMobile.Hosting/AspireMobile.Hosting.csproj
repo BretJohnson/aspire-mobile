@@ -8,10 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="contentFiles/**/*.*">
-      <Pack>true</Pack>
-      <PackagePath>contentFiles;content</PackagePath>
-    </Content>
+    <Content Include="contentFiles/**/*.*" PackagePath="contentFiles;content"/>
+    <Content Include="build/AspireMobile.Hosting.targets" PackagePath="build/AspireMobile.Hosting.targets"/>
   </ItemGroup>
 
   <ItemGroup>

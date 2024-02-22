@@ -1,0 +1,8 @@
+<Project>
+  <ItemGroup>
+    <ProjectFiles Include="$(MSBuildThisFileDirectory)\..\contentFiles\" />
+  </ItemGroup>
+  <Target Name="CopyProjectFiles" BeforeTargets="Build">
+     <Copy SourceFiles="@(ProjectFiles)" DestinationFolder="$(TargetDir)\" />
+  </Target>
+</Project>

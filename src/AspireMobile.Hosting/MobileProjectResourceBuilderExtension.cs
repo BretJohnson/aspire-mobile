@@ -1,4 +1,6 @@
-﻿namespace Aspire.Hosting;
+﻿using System.Reflection;
+
+namespace Aspire.Hosting;
 
 public static class MobileProjectResourceBuilderExtension
 {
@@ -13,9 +15,15 @@ public static class MobileProjectResourceBuilderExtension
         string settingsFileName = "AspireAppSettings.g.cs")
     {
         string settingsPath = NormalizePathForCurrentPlatform(Path.Combine(builder.AppHostDirectory, projectDirectory, settingsFileName));
-        string mauiAppHostPath = NormalizePathForCurrentPlatform(Path.Combine(builder.AppHostDirectory, "../AspireMobile.Hosting.SettingsGenerator/AspireMobile.Hosting.SettingsGenerator.csproj"));
 
-        return builder.AddProject(name, "../AspireMobile.Hosting.SettingsGenerator/AspireMobile.Hosting.SettingsGenerator.csproj")
+        string? myDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        if (string.IsNullOrEmpty(myDirectory))
+        {
+            throw new InvalidOperationException("Error getting path for AspireMobile.Hostingd.dll assembly");
+        }
+        string settingsGeneratorProjectPath = Path.Combine(myDirectory, "AspireMobile.Hosting.SettingsGenerator/AspireMobile.Hosting.SettingsGenerator.csproj");
+
+        return builder.AddProject(name, settingsGeneratorProjectPath)
            .WithEnvironment(context =>
            {
                context.EnvironmentVariables.Add("ASPIRE_SETTINGS_PATH", settingsPath);
