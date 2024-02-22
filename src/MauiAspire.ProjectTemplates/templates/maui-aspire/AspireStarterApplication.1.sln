@@ -12,7 +12,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireStarterApplication.1.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireStarterApplication.1.Web", "AspireStarterApplication.1.Web\AspireStarterApplication.1.Web.csproj", "{AC2DB38C-F5AD-4CEF-BC4C-04AE6EE86C9F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireStarterApplication.1.MauiApp", "AspireStarterApplication.1.Web\AspireStarterApplication.1.Web.csproj", "{8757E021-D0C4-4DAD-836D-4C5F3F8350BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireStarterApplication.1.MauiApp", "AspireStarterApplication.1.MauiApp\AspireStarterApplication.1.MauiApp.csproj", "{8757E021-D0C4-4DAD-836D-4C5F3F8350BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
