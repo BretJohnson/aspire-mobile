@@ -9,16 +9,14 @@ internal class Program
     {
         IDictionary environmentVariables = Environment.GetEnvironmentVariables();
 
-        string? settingsPath = (string?)environmentVariables["ASPIRE_SETTINGS_PATH"];
-        if (settingsPath == null)
+        if (args.Length != 1)
         {
-            Console.Write("No ASPIRE_SETTINGS_PATH environment variable not found");
+            Console.WriteLine($"Invalid argument count {args.Length}. Pass a single command line argument, with the path to the file for the output settings.");
         }
-        else
-        {
-            WriteSettings(environmentVariables, settingsPath);
-            Console.Write($"Updated {settingsPath}");
-        }
+
+        string settingsPath = args[0];
+        WriteSettings(environmentVariables, settingsPath);
+        Console.WriteLine($"Updated {settingsPath}");
 
         Thread.Sleep(Timeout.Infinite);
     }

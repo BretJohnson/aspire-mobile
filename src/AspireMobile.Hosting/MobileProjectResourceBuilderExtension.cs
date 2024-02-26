@@ -11,7 +11,7 @@ public static class MobileProjectResourceBuilderExtension
     /// <param name="name">The name of the resource. This name will be used for service discovery when referenced in a dependency.</param>
     /// <param name="projectDirectory">The path to the project file.</param>
     /// <returns>A reference to the <see cref="IResourceBuilder{ProjectResource}"/>.</returns>
-    public static IResourceBuilder<ProjectResource> AddMobileProject(this IDistributedApplicationBuilder builder, string name, string projectDirectory,
+    public static IResourceBuilder<ExecutableResource> AddMobileProject(this IDistributedApplicationBuilder builder, string name, string projectDirectory,
         string settingsFileName = "AspireAppSettings.g.cs")
     {
         string settingsPath = NormalizePathForCurrentPlatform(Path.Combine(builder.AppHostDirectory, projectDirectory, settingsFileName));
@@ -19,15 +19,10 @@ public static class MobileProjectResourceBuilderExtension
         string? myDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         if (string.IsNullOrEmpty(myDirectory))
         {
-            throw new InvalidOperationException("Error getting path for AspireMobile.Hostingd.dll assembly");
+            throw new InvalidOperationException("Error getting path for AspireMobile.Hosting.dll assembly");
         }
-        string settingsGeneratorProjectPath = Path.Combine(myDirectory, "AspireMobile.Hosting.SettingsGenerator/AspireMobile.Hosting.SettingsGenerator.csproj");
 
-        return builder.AddProject(name, settingsGeneratorProjectPath)
-           .WithEnvironment(context =>
-           {
-               context.EnvironmentVariables.Add("ASPIRE_SETTINGS_PATH", settingsPath);
-           });
+        return builder.AddExecutable(name, "dotnet", myDirectory, "GenerateSettings.dll", settingsPath);
     }
 
     private static string NormalizePathForCurrentPlatform(string path)

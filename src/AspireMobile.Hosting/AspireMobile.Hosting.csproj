@@ -8,12 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="contentFiles/**/*.*" PackagePath="contentFiles;content"/>
-    <Content Include="build/AspireMobile.Hosting.targets" PackagePath="build/AspireMobile.Hosting.targets"/>
+    <PackageReference Include="Aspire.Hosting" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aspire.Hosting" />
+    <ProjectReference Include="..\AspireMobile.Hosting.GenerateSettings\AspireMobile.Hosting.GenerateSettings.csproj" />
   </ItemGroup>
-    
+
 </Project>
