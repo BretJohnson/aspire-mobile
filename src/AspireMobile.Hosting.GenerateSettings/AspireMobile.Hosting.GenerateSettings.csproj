@@ -7,6 +7,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <AssemblyName>GenerateSettings</AssemblyName>
+    <PackageId>AspireMobile.Hosting.GenerateSettings</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
