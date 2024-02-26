@@ -1,0 +1,8 @@
+<Project>
+    <ItemGroup>
+        <RuntimeConfigFile Include="$(MSBuildThisFileDirectory)\..\lib\net8.0\GenerateSettings.runtimeconfig.json" />
+    </ItemGroup>
+    <Target Name="CopyRuntimeConfigFile" BeforeTargets="Build">
+        <Copy SourceFiles="@(RuntimeConfigFile)" DestinationFolder="$(TargetDir)" />
+    </Target>
+</Project>

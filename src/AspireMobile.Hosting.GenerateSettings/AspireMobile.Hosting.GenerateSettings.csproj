@@ -11,10 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="$(TargetDir)\GenerateSettings.runtimeconfig.json">
-      <Pack>true</Pack>
-      <PackageCopyToOutput>true</PackageCopyToOutput>
-    </None>
+    <Content Include="build/AspireMobile.Hosting.GenerateSettings.targets" PackagePath="build/AspireMobile.Hosting.GenerateSettings.targets"/>
   </ItemGroup>
 
 </Project>
