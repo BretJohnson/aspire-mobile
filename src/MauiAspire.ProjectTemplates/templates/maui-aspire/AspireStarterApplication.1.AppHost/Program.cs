@@ -12,4 +12,10 @@ builder.AddProject<Projects.AspireStarterApplication__1_Web>("webfrontend")
 #endif
     .WithReference(apiService);
 
+// MAUI projects are registered differently than other project types, with AddMobileProject. Aspire settings
+// that are normally set as environment variables at launch time are in the case of MAUI instead generated
+// in the specified MAUI app project directory, in the AspireAppSettings.g.cs file.
+builder.AddMobileProject("mauiclient", "../AspireStarterApplication.1.MauiApp")
+    .WithReference(apiService);
+
 builder.Build().Run();
