@@ -12,7 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AspireMobile.Hosting.GenerateSettings\AspireMobile.Hosting.GenerateSettings.csproj" />
+      <!-- Set PrivateAssets to also include contentFiles, per https://github.com/NuGet/Home/issues/6151 -->
+      <ProjectReference Include="..\AspireMobile.Hosting.GenerateSettings\AspireMobile.Hosting.GenerateSettings.csproj" PrivateAssets="analyzers;build" />
   </ItemGroup>
 
 </Project>
