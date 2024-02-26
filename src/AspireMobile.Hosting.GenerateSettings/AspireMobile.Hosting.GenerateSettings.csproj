@@ -9,4 +9,11 @@
     <AssemblyName>GenerateSettings</AssemblyName>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="$(TargetDir)\GenerateSettings.runtimeconfig.json">
+      <Pack>true</Pack>
+      <PackageCopyToOutput>true</PackageCopyToOutput>
+    </None>
+  </ItemGroup>
+
 </Project>
