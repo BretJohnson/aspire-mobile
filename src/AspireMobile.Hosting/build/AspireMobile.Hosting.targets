@@ -1,0 +1,8 @@
+<Project>
+    <ItemGroup>
+        <AppStubProjectFiles Include="$(MSBuildThisFileDirectory)\..\contentFiles" />
+    </ItemGroup>
+    <Target Name="CopyAppStubProjectFiles" BeforeTargets="Build">
+        <Copy SourceFiles="@(AppStubProjectFiles)" DestinationFolder="$(TargetDir)" />
+    </Target>
+</Project>

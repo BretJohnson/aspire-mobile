@@ -2,17 +2,11 @@
 
   <PropertyGroup>
     <IsPackable>true</IsPackable>
+    <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageId>AspireMobile.Hosting.AppStub</PackageId>
   </PropertyGroup>
-    
-  <ItemGroup>
-    <Content Include="contentFiles/**/*.*" PackagePath="contentFiles;content" />
-  </ItemGroup>    
-
-  <ItemGroup>
-    <PackageReference Include="Aspire.Hosting" />
-  </ItemGroup>
 
 </Project>

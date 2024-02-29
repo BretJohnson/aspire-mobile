@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "AppStub": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

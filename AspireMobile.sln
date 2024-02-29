@@ -38,8 +38,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireMobile.Hosting", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiAspire.ProjectTemplates", "src\MauiAspire.ProjectTemplates\MauiAspire.ProjectTemplates.csproj", "{53E288B2-9431-489D-BA0C-7A2547EE5624}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireMobile.Hosting.GenerateSettings", "src\AspireMobile.Hosting.GenerateSettings\AspireMobile.Hosting.GenerateSettings.csproj", "{DF4BEA5F-B641-42C3-9384-84D7E2F7104A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,10 +56,6 @@ Global
 		{53E288B2-9431-489D-BA0C-7A2547EE5624}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53E288B2-9431-489D-BA0C-7A2547EE5624}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53E288B2-9431-489D-BA0C-7A2547EE5624}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DF4BEA5F-B641-42C3-9384-84D7E2F7104A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DF4BEA5F-B641-42C3-9384-84D7E2F7104A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DF4BEA5F-B641-42C3-9384-84D7E2F7104A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DF4BEA5F-B641-42C3-9384-84D7E2F7104A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,7 +66,6 @@ Global
 		{F257BEFA-72A9-46CE-85B4-34BA745CA753} = {781AA387-FFB1-47AD-8A96-E7AE9A8A775F}
 		{10607B5B-5430-4560-800B-05986D9DD1DA} = {781AA387-FFB1-47AD-8A96-E7AE9A8A775F}
 		{53E288B2-9431-489D-BA0C-7A2547EE5624} = {781AA387-FFB1-47AD-8A96-E7AE9A8A775F}
-		{DF4BEA5F-B641-42C3-9384-84D7E2F7104A} = {781AA387-FFB1-47AD-8A96-E7AE9A8A775F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E3944F6A-384B-4B0F-B93F-3BD513DC57BD}
