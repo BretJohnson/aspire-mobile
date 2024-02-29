@@ -2,7 +2,6 @@
   "$schema": "https://json.schemastore.org/template",
   "author": "Microsoft",
   "classifications": [
-    "Common",
     "MAUI",
     ".NET Aspire",
     "Web API",
