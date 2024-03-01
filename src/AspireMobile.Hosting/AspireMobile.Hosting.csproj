@@ -8,12 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="contentFiles/**/*.*" PackagePath="contentFiles;content" />
-    <Content Include="build/AspireMobile.Hosting.targets" PackagePath="build/AspireMobile.Hosting.targets"/>
+    <Content Include="../AppStub/**/*.*" PackagePath="contentFiles;content" />
+    <Content Include="build/AspireMobile.Hosting.targets" PackagePath="build/AspireMobile.Hosting.targets" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Aspire.Hosting" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AppStub\AppStub.csproj" PrivateAssets="All" />
   </ItemGroup>
 
 </Project>
