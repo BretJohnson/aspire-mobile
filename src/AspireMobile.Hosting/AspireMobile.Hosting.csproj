@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="../AppStub/**/*.*" PackagePath="contentFiles;content" />
+    <Content Include="../AppStub/**/*.*" PackagePath="contentFiles/AppStub;content/AppStub" />
     <Content Include="build/AspireMobile.Hosting.targets" PackagePath="build/AspireMobile.Hosting.targets" />
   </ItemGroup>
 
