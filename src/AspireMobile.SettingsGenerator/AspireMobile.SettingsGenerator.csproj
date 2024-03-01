@@ -1,12 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <IsPackable>false</IsPackable>
-    <OutputType>Exe</OutputType>
+    <IsPackable>true</IsPackable>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <PackageId>AspireMobile.Hosting.AppStub</PackageId>
 
     <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
     <BaseOutputPath>bin\</BaseOutputPath>

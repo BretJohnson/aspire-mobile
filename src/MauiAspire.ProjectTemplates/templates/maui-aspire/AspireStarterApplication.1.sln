@@ -14,6 +14,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireStarterApplication.1.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireStarterApplication.1", "AspireStarterApplication.1\AspireStarterApplication.1.csproj", "{8757E021-D0C4-4DAD-836D-4C5F3F8350BA}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientStub", "AspireStarterApplication.1\ClientStub.csproj", "{3EB7A3C0-ECBB-4E62-9C28-BF8AE13C5793}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{8757E021-D0C4-4DAD-836D-4C5F3F8350BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8757E021-D0C4-4DAD-836D-4C5F3F8350BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8757E021-D0C4-4DAD-836D-4C5F3F8350BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EB7A3C0-ECBB-4E62-9C28-BF8AE13C5793.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EB7A3C0-ECBB-4E62-9C28-BF8AE13C5793.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EB7A3C0-ECBB-4E62-9C28-BF8AE13C5793.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EB7A3C0-ECBB-4E62-9C28-BF8AE13C5793.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

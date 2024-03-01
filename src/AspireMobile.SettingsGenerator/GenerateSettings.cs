@@ -3,10 +3,11 @@
 
 using System.Collections;
 
-internal class Program
+namespace AspireMobile.SettingsGenerator;
+
+public class GenerateSettings
 {
-    public static void Main(string[] args)
-    {
+    public static void Generate()    {
         IDictionary environmentVariables = Environment.GetEnvironmentVariables();
 
         string? settingsPath = (string?)environmentVariables["ASPIRE_SETTINGS_PATH"];

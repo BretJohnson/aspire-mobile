@@ -38,7 +38,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireMobile.Hosting", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiAspire.ProjectTemplates", "src\MauiAspire.ProjectTemplates\MauiAspire.ProjectTemplates.csproj", "{53E288B2-9431-489D-BA0C-7A2547EE5624}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppStub", "src\AppStub\AppStub.csproj", "{0D938C6F-A0AC-48F2-9CCA-3ABB96A7BE42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireMobile.SettingsGenerator", "src\AppStub\AspireMobile.SettingsGenerator.csproj", "{0D938C6F-A0AC-48F2-9CCA-3ABB96A7BE42}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

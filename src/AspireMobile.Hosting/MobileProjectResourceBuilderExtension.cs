@@ -13,24 +13,17 @@ public static class MobileProjectResourceBuilderExtension
     /// <param name="builder">The <see cref="IDistributedApplicationBuilder"/>.</param>
     /// <param name="name">The name of the resource. This name shows in the dashboard and can be used for service discovery when referenced in a dependency.</param>
     /// <param name="projectDirectory">The path to the project file.</param>
-    /// <returns>A reference to the <see cref="IResourceBuilder{ProjectResource}"/>.</returns>
+    /// <returns>A reference to the <see cref="IResourceBuilder{ProjectResource}"/>.</returns>  
     public static IResourceBuilder<ProjectResource> AddMobileProject(this IDistributedApplicationBuilder builder, string name, string projectDirectory,
         string settingsFileName = "AspireAppSettings.g.cs")
     {
+        string clientStubProjectPath = NormalizePathForCurrentPlatform(Path.Combine(builder.AppHostDirectory, "../ClientStub/ClientStub.csproj"));
         string settingsPath = NormalizePathForCurrentPlatform(Path.Combine(builder.AppHostDirectory, projectDirectory, settingsFileName));
 
-        string? myDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-        if (string.IsNullOrEmpty(myDirectory))
+        return builder.AddProject(name, clientStubProjectPath).WithEnvironment(delegate (EnvironmentCallbackContext context)
         {
-            throw new InvalidOperationException("Error getting path for AspireMobile.Hostingd.dll assembly");
-        }
-        string settingsGeneratorProjectPath = Path.Combine(myDirectory, "AppStub/AppStub.csproj");
-
-        return builder.AddProject(name, settingsGeneratorProjectPath)
-           .WithEnvironment(context =>
-           {
-               context.EnvironmentVariables.Add("ASPIRE_SETTINGS_PATH", settingsPath);
-           });
+            context.EnvironmentVariables.Add("ASPIRE_SETTINGS_PATH", settingsPath);
+        });
     }
 
     private static string NormalizePathForCurrentPlatform(string path)
