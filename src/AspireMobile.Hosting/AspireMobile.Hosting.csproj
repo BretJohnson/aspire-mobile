@@ -6,9 +6,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-    
+
   <ItemGroup>
     <Content Include="contentFiles/**/*.*" PackagePath="contentFiles;content" />
+    <Content Include="build/AspireMobile.Hosting.targets" PackagePath="build/AspireMobile.Hosting.targets"/>
   </ItemGroup>
 
   <ItemGroup>
