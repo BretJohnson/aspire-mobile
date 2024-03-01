@@ -23,7 +23,7 @@ In Visual Studio: `File` / `New Project` / `.NET MAUI App with Aspire` / `MyApp`
 
 or create a project from the CLI:
 ```
-dotnet new maui-aspire -n MyApp
+dotnet new maui-aspire -o MyApp
 ```
 
 ## Usage
