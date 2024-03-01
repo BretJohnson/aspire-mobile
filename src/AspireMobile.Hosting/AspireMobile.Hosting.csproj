@@ -9,7 +9,7 @@
     
   <ItemGroup>
     <Content Include="contentFiles/**/*.*" PackagePath="contentFiles;content" />
-  </ItemGroup>    
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Aspire.Hosting" />
