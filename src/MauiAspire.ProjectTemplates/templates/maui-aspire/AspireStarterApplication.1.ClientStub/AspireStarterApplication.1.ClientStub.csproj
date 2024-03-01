@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AspireMobile.SettingsGenerator" Version="!!REPLACE_WITH_ASPIRE_VERSION!!" />
+    <PackageReference Include="AspireMobile.SettingsGenerator" Version="!!REPLACE_WITH_LATEST_VERSION!!" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "ClientStub": {
+    "AspireStarterApplication.1.ClientStub": {
       "commandName": "Project",
       "environmentVariables": {
         "DOTNET_ENVIRONMENT": "Development"

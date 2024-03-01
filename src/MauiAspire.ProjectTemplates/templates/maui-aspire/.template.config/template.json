@@ -355,7 +355,7 @@
       "path": "AspireStarterApplication.1.Web\\AspireStarterApplication.1.Web.csproj"
     },
     {
-      "path": "AspireStarterApplication.1\\ClientStub.csproj"
+      "path": "AspireStarterApplication.1\\AspireStarterApplication.1.ClientStub.csproj"
     },
     {
       "path": "AspireStarterApplication.1\\AspireStarterApplication.1.csproj"
