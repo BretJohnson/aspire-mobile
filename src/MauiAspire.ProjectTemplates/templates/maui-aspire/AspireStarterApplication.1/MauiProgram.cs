@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 
-namespace AspireStarterApplication._1.MauiApp;
+namespace AspireStarterApplication._1;
 
 public static class MauiProgram
 {
