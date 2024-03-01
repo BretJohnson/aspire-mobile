@@ -1,8 +1,8 @@
 ﻿<maui:MauiWinUIApplication
-    x:Class="ClientAppsIntegration.MAUI.WinUI.App"
+    x:Class="AspireStarterApplication._1.MauiApp.WinUI.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:maui="using:Microsoft.Maui"
-    xmlns:local="using:ClientAppsIntegration.MAUI.WinUI">
+    xmlns:local="using:AspireStarterApplication._1.MauiApp.WinUI">
 
 </maui:MauiWinUIApplication>

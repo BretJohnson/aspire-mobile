@@ -1,10 +1,9 @@
 ﻿using Foundation;
 
-namespace ClientAppsIntegration.MAUI
+namespace AspireStarterApplication._1.MauiApp;
+
+[Register("AppDelegate")]
+public class AppDelegate : MauiUIApplicationDelegate
 {
-    [Register("AppDelegate")]
-    public class AppDelegate : MauiUIApplicationDelegate
-    {
-        protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
-    }
+    protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
 }
