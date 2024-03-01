@@ -13,6 +13,16 @@ your feedback.
 **_Current status (to set expectations):_**
 The NuGets aren't published quite yet and we're still fixing some things.
 
+[Optional] To use the latest CI built packages create a nuget.config file with contents below. Put it in a parent directory to what you use for testing.
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+<packageSources>
+    <add key="aspire-mobile" value="https://pkgs.dev.azure.com/bretjohn-public/aspire-mobile/_packaging/aspire-mobile/nuget/v3/index.json" />
+</packageSources>
+</configuration>
+```
 
 Install the templates:
 ```
