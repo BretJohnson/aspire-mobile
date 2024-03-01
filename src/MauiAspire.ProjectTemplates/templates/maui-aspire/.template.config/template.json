@@ -354,7 +354,7 @@
       "path": "AspireStarterApplication.1.Web\\AspireStarterApplication.1.Web.csproj"
     },
     {
-      "path": "AspireStarterApplication.1.MauiApp\\AspireStarterApplication.1.MauiApp.csproj"
+      "path": "AspireStarterApplication.1\\AspireStarterApplication.1.csproj"
     }
   ],
   "postActions": [

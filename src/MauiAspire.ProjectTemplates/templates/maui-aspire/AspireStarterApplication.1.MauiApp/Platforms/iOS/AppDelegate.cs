@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace AspireStarterApplication._1.MauiApp;
+namespace AspireStarterApplication._1;
 
 [Register("AppDelegate")]
 public class AppDelegate : MauiUIApplicationDelegate

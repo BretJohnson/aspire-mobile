@@ -2,7 +2,7 @@ using System;
 using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
 
-namespace AspireStarterApplication._1.MauiApp;
+namespace AspireStarterApplication._1;
 
 class Program : MauiApplication
 {

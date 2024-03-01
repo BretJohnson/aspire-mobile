@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace AspireStarterApplication._1.MauiApp;
+namespace AspireStarterApplication._1;
 
 [Application]
 public class MainApplication : MauiApplication
