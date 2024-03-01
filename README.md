@@ -7,20 +7,19 @@
 This project provides the integration code necessary to use .NET MAUI with Aspire. It also includes a .NET MAUI + Aspire project template. It's currently experimental, and we want
 your feedback.
 
-
 ## Creating a new MAUI+Aspire project
 
-**_Current status (to set expectations):_**
-The NuGets aren't published quite yet and we're still fixing some things.
+**_Current status:_**
+Please test using the CI NuGet feed below. Once a few of us have tested, I will publish to the public nuget.org feed.
 
-[Optional] To use the latest CI built packages create a nuget.config file with contents below. Put it in a parent directory to what you use for testing.
+[Optional] To use the latest CI built packages create a nuget.config file with contents below. Place it in a parent directory to the directory you use for testing.
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
-<packageSources>
+  <packageSources>
     <add key="aspire-mobile" value="https://pkgs.dev.azure.com/bretjohn-public/aspire-mobile/_packaging/aspire-mobile/nuget/v3/index.json" />
-</packageSources>
+  </packageSources>
 </configuration>
 ```
 
