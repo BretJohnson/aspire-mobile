@@ -10,7 +10,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AspireStarterApplication.1.ApiService\AspireStarterApplication.1.ApiService.csproj" />
+<!--#if (IncludeWeb) -->      
     <ProjectReference Include="..\AspireStarterApplication.1.Web\AspireStarterApplication.1.Web.csproj" />
+<!--#endif-->
     <ProjectReference Include="..\AspireStarterApplication.1.ClientStub\AspireStarterApplication.1.ClientStub.csproj" />
   </ItemGroup>
 
