@@ -10,8 +10,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireStarterApplication.1.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireStarterApplication.1.ApiService", "AspireStarterApplication.1.ApiService\AspireStarterApplication.1.ApiService.csproj", "{9FEB877E-015D-4E20-AE63-06C596E242E4}"
 EndProject
+#if (IncludeWeb)
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireStarterApplication.1.Web", "AspireStarterApplication.1.Web\AspireStarterApplication.1.Web.csproj", "{AC2DB38C-F5AD-4CEF-BC4C-04AE6EE86C9F}"
 EndProject
+#endif
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireStarterApplication.1.ClientStub", "AspireStarterApplication.1.ClientStub\AspireStarterApplication.1.ClientStub.csproj", "{3EB7A3C0-ECBB-4E62-9C28-BF8AE13C5793}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireStarterApplication.1", "AspireStarterApplication.1\AspireStarterApplication.1.csproj", "{8757E021-D0C4-4DAD-836D-4C5F3F8350BA}"
@@ -38,10 +40,12 @@ Global
 		{9FEB877E-015D-4E20-AE63-06C596E242E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FEB877E-015D-4E20-AE63-06C596E242E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FEB877E-015D-4E20-AE63-06C596E242E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		#if (IncludeWeb)
 		{AC2DB38C-F5AD-4CEF-BC4C-04AE6EE86C9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AC2DB38C-F5AD-4CEF-BC4C-04AE6EE86C9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC2DB38C-F5AD-4CEF-BC4C-04AE6EE86C9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC2DB38C-F5AD-4CEF-BC4C-04AE6EE86C9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		#endif
 		{8757E021-D0C4-4DAD-836D-4C5F3F8350BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8757E021-D0C4-4DAD-836D-4C5F3F8350BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8757E021-D0C4-4DAD-836D-4C5F3F8350BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
