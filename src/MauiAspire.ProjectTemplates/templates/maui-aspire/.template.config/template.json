@@ -367,7 +367,8 @@
       "path": "AspireStarterApplication.1.ApiService\\AspireStarterApplication.1.ApiService.csproj"
     },
     {
-      "path": "AspireStarterApplication.1.Web\\AspireStarterApplication.1.Web.csproj"
+      "path": "AspireStarterApplication.1.Web\\AspireStarterApplication.1.Web.csproj",
+      "condition": "(IncludeWeb)"
     },
     {
       "path": "AspireStarterApplication.1.ClientStub\\AspireStarterApplication.1.ClientStub.csproj"
