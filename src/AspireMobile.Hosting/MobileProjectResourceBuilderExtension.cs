@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-
-namespace Aspire.Hosting;
+﻿namespace Aspire.Hosting;
 
 public static class MobileProjectResourceBuilderExtension
 {
@@ -14,9 +12,20 @@ public static class MobileProjectResourceBuilderExtension
     /// <param name="name">The name of the resource. This name shows in the dashboard and can be used for service discovery when referenced in a dependency.</param>
     /// <param name="projectDirectory">The path to the project file.</param>
     /// <returns>A reference to the <see cref="IResourceBuilder{ProjectResource}"/>.</returns>  
-    public static IResourceBuilder<ProjectResource> AddMobileProject(this IDistributedApplicationBuilder builder, string name, string projectDirectory, string clientStubProjectPath,
-        string settingsFileName = "AspireAppSettings.g.cs")
+    public static IResourceBuilder<ProjectResource> AddMobileProject(this IDistributedApplicationBuilder builder, string name, string projectDirectory,
+        string settingsFileName = "AspireAppSettings.g.cs", string clientStubProjectPath = "")
     {
+        if (string.IsNullOrEmpty(clientStubProjectPath))
+        {
+            string projectName = Path.GetFileName(projectDirectory);
+            clientStubProjectPath = Path.Combine(projectDirectory + ".ClientStub", projectName + ".ClientStub.csproj");
+
+            if (! File.Exists(clientStubProjectPath))
+            {
+                throw new InvalidOperationException($"Default ClientStub project '{clientStubProjectPath}' doesn't exist. Specify a value for the optional clientStubProjectPath parameter if the path differs from the default.");
+            }
+        }
+
         string settingsPath = NormalizePathForCurrentPlatform(Path.Combine(builder.AppHostDirectory, projectDirectory, settingsFileName));
 
         return builder.AddProject(name, clientStubProjectPath).WithEnvironment(delegate (EnvironmentCallbackContext context)
