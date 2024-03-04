@@ -76,7 +76,14 @@
         <PackageReference Include="MauiAspire.App" Version="!!REPLACE_WITH_LATEST_VERSION!!" />
     </ItemGroup>
 
+    <!-- AppDefaultsExtensions related references -->
     <ItemGroup>
-        <ProjectReference Include="..\AspireStarterApplication.1.AppDefaults\AspireStarterApplication.1.AppDefaults.csproj" />
-	</ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="8.1.0" />
+        <PackageReference Include="Microsoft.Extensions.ServiceDiscovery" Version="!!REPLACE_WITH_ASPIRE_VERSION!!" />
+        <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.7.0-alpha.1" />
+        <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.7.0-alpha.1" />
+        <PackageReference Include="OpenTelemetry.Instrumentation.GrpcNetClient" Version="1.6.0-beta.2" />
+        <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.6.0-beta.2" />
+        <PackageReference Include="OpenTelemetry.Instrumentation.Runtime" Version="1.5.1" />
+    </ItemGroup>
 </Project>
