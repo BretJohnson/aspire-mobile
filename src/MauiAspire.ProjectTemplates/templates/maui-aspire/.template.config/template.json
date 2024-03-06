@@ -360,9 +360,6 @@
       "path": "AspireStarterApplication.1.ServiceDefaults\\AspireStarterApplication.1.ServiceDefaults.csproj"
     },
     {
-      "path": "AspireStarterApplication.1.AppDefaults\\AspireStarterApplication.1.AppDefaults.csproj"
-    },
-    {
       "path": "AspireStarterApplication.1.ApiService\\AspireStarterApplication.1.ApiService.csproj"
     },
     {
