@@ -11,7 +11,7 @@ public class GenerateSettings
         IDictionary environmentVariables = Environment.GetEnvironmentVariables();
 
         string? settingsPath = (string?)environmentVariables["ASPIRE_SETTINGS_PATH"];
-        if (settingsPath == null)
+        if (settingsPath is null)
         {
             Console.Write("No ASPIRE_SETTINGS_PATH environment variable not found");
         }
@@ -35,6 +35,12 @@ public class GenerateSettings
             "DOTNET_SYSTEM_CONSOLE_ALLOW_ANSI_COLOR_REDIRECTION"
         };
 
+        var prefixesToRemove = new List<string>
+        {
+            "ASPNETCORE_",
+            "DOTNET_",
+        };
+
         // Get the subset of variables that are provided by Aspire and sort them
         List<string> variableNames = new List<string>();
         foreach (object variableNameObject in environmentVariables.Keys)
@@ -42,13 +48,32 @@ public class GenerateSettings
             string variableName = (string)variableNameObject;
             if (variablesToInclude.Contains(variableName) || variableName.StartsWith("OTEL_") || variableName.StartsWith("LOGGING__CONSOLE") || variableName.StartsWith("services__"))
             {
+                // Normalize the key, matching the logic here:
+                // https://github.dev/dotnet/runtime/blob/main/src/libraries/Microsoft.Extensions.Configuration.EnvironmentVariables/src/EnvironmentVariablesConfigurationProvider.cs
+                variableName = variableName.Replace("__", ":");
+
+                // For defined prefixes, add the variable with the prefix removed, matching the logic
+                // in EnvironmentVariablesConfigurationProvider.cs. Also add the variable with the
+                // prefix intact, which matches the normal HostApplicationBuilder behavior, where
+                // there's an EnvironmentVariablesConfigurationProvider added with and another one
+                // without the prefix set.
+                foreach (var prefix in prefixesToRemove)
+                {
+                    if (variableName.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
+                    {
+                        variableNames.Add(variableName);
+                        variableName = variableName.Substring(variableName.Length);
+                        break;
+                    }
+                }
+
                 variableNames.Add(variableName);
             }
         }
 
         variableNames.Sort();
 
-        using (StreamWriter file = new StreamWriter(settingsPath))
+        using (var file = new StreamWriter(settingsPath))
         {
             file.Write("""
                     // This file is generated from the Aspire AppHost project. Rerun the Aspire AppHost
@@ -64,10 +89,8 @@ public class GenerateSettings
 
             foreach (string variableName in variableNames)
             {
-                string normalizedVariableName = variableName.Replace("__", ":");
-
                 string valueLiteral = GetValueStringLiteral((string) environmentVariables[variableName]!);
-                file.WriteLine($"""            ["{normalizedVariableName}"] = {valueLiteral},""");
+                file.WriteLine($"""            ["{variableName}"] = {valueLiteral},""");
             }
 
             file.Write("""
