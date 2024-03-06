@@ -65,7 +65,7 @@ public class GenerateSettings
                     if (variableName.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
                     {
                         settings.Add(new Setting(variableName, value));
-                        variableName = variableName.Substring(variableName.Length);
+                        variableName = variableName.Substring(prefix.Length);
                         break;
                     }
                 }
