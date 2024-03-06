@@ -2,13 +2,15 @@
 
 public partial class MainPage : ContentPage
 {
+    readonly ILogger<MainPage> _logger;
     readonly WeatherApiClient _weatherApiClient;
     readonly CancellationTokenSource _closingCts = new();
 
-    public MainPage(WeatherApiClient weatherApiClient)
+    public MainPage(ILogger<MainPage> logger, WeatherApiClient weatherApiClient)
     {
         InitializeComponent();
 
+        _logger = logger;
         _weatherApiClient = weatherApiClient;
 
         pbLoading.IsVisible = false;
@@ -43,6 +45,8 @@ public partial class MainPage : ContentPage
         }
         catch (Exception ex)
         {
+            _logger.LogError(ex, "Error loading weather");
+
             dgWeather.IsVisible = false;
             dgWeather.ItemsSource = null;
 

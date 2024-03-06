@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using OpenTelemetry.Logs;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Trace;
@@ -8,7 +7,7 @@ namespace Microsoft.Extensions.Hosting;
 
 public static class AppDefaultsExtensions
 {
-    public static IHostApplicationBuilder AddAppDefaults(this IHostApplicationBuilder builder)
+    public static MauiAppBuilder AddAppDefaultsBak(this MauiAppBuilder builder)
     {
         builder.ConfigureAppOpenTelemetry();
 
@@ -26,7 +25,7 @@ public static class AppDefaultsExtensions
         return builder;
     }
 
-    public static IHostApplicationBuilder ConfigureAppOpenTelemetry(this IHostApplicationBuilder builder)
+    public static MauiAppBuilder ConfigureAppOpenTelemetry(this MauiAppBuilder builder)
     {
         builder.Logging.AddOpenTelemetry(logging =>
         {
@@ -42,7 +41,7 @@ public static class AppDefaultsExtensions
             })
             .WithTracing(tracing =>
             {
-                if (builder.Environment.IsDevelopment())
+                if (builder.Configuration.IsDevelopment())
                 {
                     // We want to view all traces in development
                     tracing.SetSampler(new AlwaysOnSampler());
@@ -57,7 +56,7 @@ public static class AppDefaultsExtensions
         return builder;
     }
 
-    private static IHostApplicationBuilder AddOpenTelemetryExporters(this IHostApplicationBuilder builder)
+    private static MauiAppBuilder AddOpenTelemetryExporters(this MauiAppBuilder builder)
     {
         var useOtlpExporter = !string.IsNullOrWhiteSpace(builder.Configuration["OTEL_EXPORTER_OTLP_ENDPOINT"]);
 
