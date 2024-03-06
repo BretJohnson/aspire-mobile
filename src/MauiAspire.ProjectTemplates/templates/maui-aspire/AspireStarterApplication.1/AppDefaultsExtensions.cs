@@ -7,7 +7,7 @@ namespace Microsoft.Extensions.Hosting;
 
 public static class AppDefaultsExtensions
 {
-    public static MauiAppBuilder AddAppDefaultsBak(this MauiAppBuilder builder)
+    public static MauiAppBuilder AddAppDefaults(this MauiAppBuilder builder)
     {
         builder.ConfigureAppOpenTelemetry();
 

@@ -1,4 +1,6 @@
-﻿namespace AspireStarterApplication._1;
+﻿using Microsoft.Extensions.Logging;
+
+namespace AspireStarterApplication._1;
 
 public partial class MainPage : ContentPage
 {
