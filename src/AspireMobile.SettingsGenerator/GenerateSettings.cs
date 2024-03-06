@@ -73,7 +73,7 @@ public class GenerateSettings
 
         variableNames.Sort();
 
-        using (StreamWriter file = new StreamWriter(settingsPath))
+        using (var file = new StreamWriter(settingsPath))
         {
             file.Write("""
                     // This file is generated from the Aspire AppHost project. Rerun the Aspire AppHost
@@ -90,7 +90,7 @@ public class GenerateSettings
             foreach (string variableName in variableNames)
             {
                 string valueLiteral = GetValueStringLiteral((string) environmentVariables[variableName]!);
-                file.WriteLine($"""            ["{normalizedVariableName}"] = {valueLiteral},""");
+                file.WriteLine($"""            ["{variableName}"] = {valueLiteral},""");
             }
 
             file.Write("""
