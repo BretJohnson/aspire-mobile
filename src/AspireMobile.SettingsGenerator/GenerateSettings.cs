@@ -21,6 +21,7 @@ public class GenerateSettings
             Console.Write($"Updated {settingsPath}");
         }
 
+        // Stay running until the Aspire AppHost decides to kill us
         Thread.Sleep(Timeout.Infinite);
     }
 
@@ -42,12 +43,14 @@ public class GenerateSettings
         };
 
         // Get the subset of variables that are provided by Aspire and sort them
-        List<string> variableNames = new List<string>();
+        List<Setting> settings = new List<Setting>();
         foreach (object variableNameObject in environmentVariables.Keys)
         {
             string variableName = (string)variableNameObject;
             if (variablesToInclude.Contains(variableName) || variableName.StartsWith("OTEL_") || variableName.StartsWith("LOGGING__CONSOLE") || variableName.StartsWith("services__"))
             {
+                string value = (string)environmentVariables[variableName]!;
+
                 // Normalize the key, matching the logic here:
                 // https://github.dev/dotnet/runtime/blob/main/src/libraries/Microsoft.Extensions.Configuration.EnvironmentVariables/src/EnvironmentVariablesConfigurationProvider.cs
                 variableName = variableName.Replace("__", ":");
@@ -61,17 +64,17 @@ public class GenerateSettings
                 {
                     if (variableName.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
                     {
-                        variableNames.Add(variableName);
+                        settings.Add(new Setting(variableName, value));
                         variableName = variableName.Substring(variableName.Length);
                         break;
                     }
                 }
 
-                variableNames.Add(variableName);
+                settings.Add(new Setting(variableName, value));
             }
         }
 
-        variableNames.Sort();
+        settings.Sort();
 
         using (var file = new StreamWriter(settingsPath))
         {
@@ -87,10 +90,10 @@ public class GenerateSettings
 
                     """);
 
-            foreach (string variableName in variableNames)
+            foreach (Setting setting in settings)
             {
-                string valueLiteral = GetValueStringLiteral((string) environmentVariables[variableName]!);
-                file.WriteLine($"""            ["{variableName}"] = {valueLiteral},""");
+                string valueLiteral = GetValueStringLiteral(setting.Value);
+                file.WriteLine($"""            ["{setting.Name}"] = {valueLiteral},""");
             }
 
             file.Write("""
