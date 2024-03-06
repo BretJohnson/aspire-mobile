@@ -19,25 +19,24 @@ public static class MauiProgram
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             });
 
-        var wrapperMauiAppBuilder = new WrapperMauiAppBuilder(mauiAppBuilder);
-//-:cnd:noEmit
+        //-:cnd:noEmit
 #if DEBUG
-        wrapperMauiAppBuilder.Configuration.AddInMemoryCollection(AspireAppSettings.Settings);
+        mauiAppBuilder.Configuration.AddInMemoryCollection(AspireAppSettings.Settings);
 #endif
-//+:cnd:noEmit
+        //+:cnd:noEmit
 
-        wrapperMauiAppBuilder.AddAppDefaults();
+        mauiAppBuilder.AddAppDefaults();
 
-//-:cnd:noEmit
+        //-:cnd:noEmit
 #if DEBUG
-        wrapperMauiAppBuilder.Logging.AddDebug();
+        mauiAppBuilder.Logging.AddDebug();
 #endif
-//+:cnd:noEmit
+        //+:cnd:noEmit
 
-        var scheme = wrapperMauiAppBuilder.Environment.IsDevelopment() ? "http" : "https";
-        wrapperMauiAppBuilder.Services.AddHttpClient<WeatherApiClient>(client => client.BaseAddress = new($"{scheme}://apiservice"));
-        wrapperMauiAppBuilder.Services.AddSingleton<MainPage>();
+        var scheme = mauiAppBuilder.Configuration.IsDevelopment() ? "http" : "https";
+        mauiAppBuilder.Services.AddHttpClient<WeatherApiClient>(client => client.BaseAddress = new($"{scheme}://apiservice"));
+        mauiAppBuilder.Services.AddSingleton<MainPage>();
 
-        return wrapperMauiAppBuilder.Build();
+        return mauiAppBuilder.Build();
     }
 }
