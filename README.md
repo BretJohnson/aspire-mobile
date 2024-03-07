@@ -1,6 +1,14 @@
 # .NET MAUI + .NET Aspire - Better Together
 
-[![NuGet package](https://img.shields.io/nuget/v/MauiAspire.svg)](https://nuget.org/packages/MauiAspire)
+[![NuGet package](https://img.shields.io/nuget/v/AspireMobile.svg)](https://nuget.org/packages/MauiAspire)
+
+| Package | Version |
+| ------- | ------- |
+| AspireMobile.Hosting | [![NuGet Version](https://img.shields.io/nuget/v/AspireMobile.Hosting.svg)](https://nuget.org/packages/AspireMobile.Hosting) |
+| AspireMobile.SettingsGenerator | [![NuGet Version](https://img.shields.io/nuget/v/AspireMobile.SettingsGenerator.svg)](https://nuget.org/packages/AspireMobile.SettingsGenerator) |
+| MauiAspire.App | [![NuGet Version](https://img.shields.io/nuget/v/MauiAspire.App.svg)](https://nuget.org/packages/MauiAspire.App) |
+| MauiAspire.ProjectTemplates | [![NuGet Version](https://img.shields.io/nuget/v/MauiAspire.ProjectTemplates.svg)](https://nuget.org/packages/MauiAspire.ProjectTemplates) |
+
 
 This project enables .NET MAUI and other mobile clients to work .NET Aspire. It also includes a .NET MAUI + Aspire project template.
 
