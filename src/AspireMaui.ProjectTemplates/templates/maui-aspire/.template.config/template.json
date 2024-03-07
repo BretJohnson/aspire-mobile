@@ -80,7 +80,7 @@
       "type": "parameter",
       "datatype": "bool",
       "defaultValue": "false",
-      "displayName": "Include _web app",
+      "displayName": "Include web app",
       "description": "Create an ASP.NET Core Blazor App, providing a web client to accompany the .NET MAUI client."
     },
     "UseRedisCache": {

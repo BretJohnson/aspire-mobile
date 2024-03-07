@@ -18,19 +18,19 @@ public static class MauiProgram
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             });
 
-        //-:cnd:noEmit
+//-:cnd:noEmit
 #if DEBUG
         mauiAppBuilder.Configuration.AddInMemoryCollection(AspireAppSettings.Settings);
 #endif
-        //+:cnd:noEmit
+//+:cnd:noEmit
 
         mauiAppBuilder.AddAppDefaults();
 
-        //-:cnd:noEmit
+//-:cnd:noEmit
 #if DEBUG
         mauiAppBuilder.Logging.AddDebug();
 #endif
-        //+:cnd:noEmit
+//+:cnd:noEmit
 
         var scheme = mauiAppBuilder.Configuration.IsDevelopment() ? "http" : "https";
         mauiAppBuilder.Services.AddHttpClient<WeatherApiClient>(client => client.BaseAddress = new($"{scheme}://apiservice"));

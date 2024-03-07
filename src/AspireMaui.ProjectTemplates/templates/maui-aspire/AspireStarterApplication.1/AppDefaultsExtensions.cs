@@ -62,6 +62,8 @@ public static class AppDefaultsExtensions
 
         if (useOtlpExporter)
         {
+            SetOpenTelemetryEnvironmentVariables();
+
             builder.Services.Configure<OpenTelemetryLoggerOptions>(logging => logging.AddOtlpExporter());
             builder.Services.ConfigureOpenTelemetryMeterProvider(metrics => metrics.AddOtlpExporter());
             builder.Services.ConfigureOpenTelemetryTracerProvider(tracing => tracing.AddOtlpExporter());
@@ -72,6 +74,17 @@ public static class AppDefaultsExtensions
         //    .UseAzureMonitor();
 
         return builder;
+    }
+
+    private static void SetOpenTelemetryEnvironmentVariables()
+    {
+        foreach (KeyValuePair<string, string> setting in AspireAppSettings.Settings)
+        {
+            if (setting.Key.StartsWith("OTEL_"))
+            {
+                Environment.SetEnvironmentVariable(setting.Key, setting.Value);
+            }
+        }
     }
 
     private static MeterProviderBuilder AddAppMeters(this MeterProviderBuilder meterProviderBuilder) =>
