@@ -4,7 +4,7 @@ pr: none
 resources:
   pipelines:
   - pipeline: CI
-    source: aspire-mobile # TODO: This should match the name of your CI pipeline
+    source: aspire-mobile # This should match the name of your CI pipeline
     trigger:
       tags:
       - auto-release
@@ -38,7 +38,7 @@ jobs:
   - task: GitHubRelease@1
     displayName: 📢 GitHub release (create)
     inputs:
-      gitHubConnection: github.com_BretJohnson # TODO: fill in service connection here
+      gitHubConnection: BretJohnson # Fill in service connection here
       repositoryName: $(Build.Repository.Name)
       target: $(resources.pipeline.CI.sourceCommit)
       tagSource: userSpecifiedTag
