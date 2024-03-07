@@ -73,7 +73,7 @@
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
     	<PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
-        <PackageReference Include="MauiAspire.App" Version="!!REPLACE_WITH_LATEST_VERSION!!" />
+        <PackageReference Include="AspireMaui.App" Version="!!REPLACE_WITH_LATEST_VERSION!!" />
     </ItemGroup>
 
     <!-- AppDefaultsExtensions related references -->

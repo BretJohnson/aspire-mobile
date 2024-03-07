@@ -32,11 +32,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{36CCE840-6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{781AA387-FFB1-47AD-8A96-E7AE9A8A775F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiAspire.App", "src\MauiAspire.App\MauiAspire.App.csproj", "{F257BEFA-72A9-46CE-85B4-34BA745CA753}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireMaui.App", "src\AspireMaui.App\AspireMaui.App.csproj", "{F257BEFA-72A9-46CE-85B4-34BA745CA753}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireMobile.Hosting", "src\AspireMobile.Hosting\AspireMobile.Hosting.csproj", "{10607B5B-5430-4560-800B-05986D9DD1DA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiAspire.ProjectTemplates", "src\MauiAspire.ProjectTemplates\MauiAspire.ProjectTemplates.csproj", "{53E288B2-9431-489D-BA0C-7A2547EE5624}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireMaui.ProjectTemplates", "src\AspireMaui.ProjectTemplates\AspireMaui.ProjectTemplates.csproj", "{53E288B2-9431-489D-BA0C-7A2547EE5624}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireMobile.SettingsGenerator", "src\AspireMobile.SettingsGenerator\AspireMobile.SettingsGenerator.csproj", "{B3D156FA-2B4C-4844-99DE-AC408A3B0AD4}"
 EndProject
