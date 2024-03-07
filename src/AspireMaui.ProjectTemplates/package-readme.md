@@ -1,1 +1,1 @@
-This package contains MAUI+Aspire project templates.
+This package contains Aspire+MAUI project templates.
