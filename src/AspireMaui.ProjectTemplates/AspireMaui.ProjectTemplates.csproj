@@ -22,7 +22,7 @@
 
   <!-- When building a package, this target will run to copy all the templates into the intermediate directory,
        replaces the package versions, and adds them to the package.-->
-  <!-- MauiAspire update: Use BeforeTargets="BeforeBuild" instead of Project InitialTargets to workaround https://github.com/dotnet/msbuild/issues/5178 -->
+  <!-- AspireMaui update: Use BeforeTargets="BeforeBuild" instead of Project InitialTargets to workaround https://github.com/dotnet/msbuild/issues/5178 -->
   <Target Name="AddTemplatesToPackageAsContent" DependsOnTargets="ReplacePackageVersionOnTemplates" BeforeTargets="BeforeBuild">
 
     <!-- Creating a temporary item instead of defining content items directly in order to avoid MSBuild MSB4120

@@ -1,13 +1,13 @@
 # .NET MAUI + .NET Aspire - Better Together
 
-[![NuGet package](https://img.shields.io/nuget/v/AspireMobile.svg)](https://nuget.org/packages/MauiAspire)
+[![NuGet package](https://img.shields.io/nuget/v/AspireMobile.svg)](https://nuget.org/packages/AspireMaui)
 
 | Package | Version |
 | ------- | ------- |
 | AspireMobile.Hosting | [![NuGet Version](https://img.shields.io/nuget/v/AspireMobile.Hosting.svg)](https://nuget.org/packages/AspireMobile.Hosting) |
 | AspireMobile.SettingsGenerator | [![NuGet Version](https://img.shields.io/nuget/v/AspireMobile.SettingsGenerator.svg)](https://nuget.org/packages/AspireMobile.SettingsGenerator) |
-| MauiAspire.App | [![NuGet Version](https://img.shields.io/nuget/v/MauiAspire.App.svg)](https://nuget.org/packages/MauiAspire.App) |
-| MauiAspire.ProjectTemplates | [![NuGet Version](https://img.shields.io/nuget/v/MauiAspire.ProjectTemplates.svg)](https://nuget.org/packages/MauiAspire.ProjectTemplates) |
+| AspireMaui.App | [![NuGet Version](https://img.shields.io/nuget/v/AspireMaui.App.svg)](https://nuget.org/packages/AspireMaui.App) |
+| AspireMaui.ProjectTemplates | [![NuGet Version](https://img.shields.io/nuget/v/AspireMaui.ProjectTemplates.svg)](https://nuget.org/packages/AspireMaui.ProjectTemplates) |
 
 
 This project enables .NET MAUI and other mobile clients to work .NET Aspire. It also includes a .NET MAUI + Aspire project template.
@@ -46,7 +46,7 @@ the cloud.
 
 Install the templates:
 ```
-dotnet new install MauiAspire.ProjectTemplates
+dotnet new install AspireMaui.ProjectTemplates
 ```
 
 In Visual Studio: `File` / `New Project` / `.NET MAUI App with Aspire` / `MyApp`
@@ -76,7 +76,7 @@ Hit the Load Weather button and you should see the MAUI app fetch weather data f
 
 Create a new solution from the template with the same name as your existing app (`MyCoolApp` in the example below). We'll copy from it.
 ```
-dotnet new install MauiAspire.ProjectTemplates
+dotnet new install AspireMaui.ProjectTemplates
 dotnet new maui-aspire -o MyCoolApp
 ```
 
