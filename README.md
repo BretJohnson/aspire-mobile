@@ -12,8 +12,7 @@ We're taking a staged approach to adding Aspire support to .NET MAUI / mobile cl
 this project to get feedback using it - from you - to help shape the product changes.
 
 **Preview / release stages:** This is when we provide official support. This repo will go away, replaced with code in the
-[dotnet/maui](https://github.com/dotnet/maui), [dotnet/aspire](https://github.com/dotnet/aspire), and other repos. Some package names may
-change.
+[dotnet/maui](https://github.com/dotnet/maui), [dotnet/aspire](https://github.com/dotnet/aspire), and other repos. Some package names may change.
 
 Terminology note: The packages here with `Mobile` in the name help support Aspire with any mobile client (e.g., .NET Android, .NET iOS, Uno, Avalonia). The packages with `Maui` in the name are MAUI specific functionality.
 
@@ -21,7 +20,7 @@ Terminology note: The packages here with `Mobile` in the name help support Aspir
 
 To report bugs with this code, create an issue on the [Issues](https://github.com/BretJohnson/aspire-mobile/issues) tab. PRs are also welcome.
 
-To share feedback on what you'd like to see for the productized experience, use the MAUI discussion topic here: [MAUI DISCUSSION ITEM LINK COMING]
+To share feedback on what you'd like to see for the productized experience, use the [Provide good support for .NET Aspire with MAUI](https://github.com/dotnet/maui/discussions/21064) discussion topic in the MAUI repo.
 
 ## Benefits
 
