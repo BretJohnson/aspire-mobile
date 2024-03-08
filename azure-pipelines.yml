@@ -1,5 +1,5 @@
 trigger:
-  batch: true
+  batch: false
   branches:
     include:
     - main
@@ -9,10 +9,16 @@ trigger:
     - doc/
     - '*.md'
     - .vscode/
-
 pr:
-- main
-- 'validate/*'
+  branches:
+    include:
+    - main
+    - 'validate/*'
+  paths:
+    exclude:
+    - doc/
+    - '*.md'
+    - .vscode/
 
 parameters:
 - name: RunTests
