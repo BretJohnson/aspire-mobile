@@ -56,15 +56,6 @@
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<None Remove="appsettings.json;appsettings.*.json" />
-		<Content Include="appsettings.json;appsettings.*.json">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-		</Content>
-	</ItemGroup>
-
 	<PropertyGroup>
 		<MauiVersion>8.0.6</MauiVersion>
 	</PropertyGroup>
