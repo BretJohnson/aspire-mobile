@@ -1,4 +1,6 @@
-﻿namespace Aspire.Hosting;
+﻿using Aspire.Hosting.ApplicationModel;
+
+namespace Aspire.Hosting;
 
 public static class MobileProjectResourceBuilderExtension
 {

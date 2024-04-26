@@ -14,7 +14,7 @@
 
     <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
     <PackageVersion Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
-    <PackageVersion Include="Aspire.Hosting" Version="8.0.0-preview.3.24105.21" />
+    <PackageVersion Include="Aspire.Hosting" Version="8.0.0-preview.6.24214.1" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
     <PackageVersion Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
   </ItemGroup>
