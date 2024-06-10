@@ -13,7 +13,7 @@
     <NoWarn>$(NoWarn);NU5128</NoWarn>
     <EnableDefaultItems>false</EnableDefaultItems>
     <Description>.NET MAUI Aspire Template Pack for Microsoft Template Engine</Description>
-    <AspireVersion>8.0.0-preview.6.24214.1</AspireVersion>
+    <AspireVersion>8.0.1</AspireVersion>
   </PropertyGroup>
 
   <ItemGroup>
