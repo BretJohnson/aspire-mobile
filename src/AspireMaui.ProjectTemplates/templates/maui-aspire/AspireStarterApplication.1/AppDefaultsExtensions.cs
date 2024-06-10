@@ -47,7 +47,9 @@ public static class AppDefaultsExtensions
                     tracing.SetSampler(new AlwaysOnSampler());
                 }
 
-                tracing.AddGrpcClientInstrumentation()
+                tracing
+                       // Uncomment the following line to enable gRPC instrumentation (requires the OpenTelemetry.Instrumentation.GrpcNetClient package)
+                       //.AddGrpcClientInstrumentation()
                        .AddHttpClientInstrumentation();
             });
 
