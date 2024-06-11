@@ -1,10 +1,12 @@
 ﻿using Microsoft.Extensions.Logging;
-using OpenTelemetry.Logs;
+using OpenTelemetry;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Trace;
 
 namespace Microsoft.Extensions.Hosting;
 
+// Adds common .NET Aspire services: service discovery, resilience, health checks, and OpenTelemetry.
+// This code is the client equivalent of the ServiceDefaults project. See https://aka.ms/dotnet/aspire/service-defaults
 public static class AppDefaultsExtensions
 {
     public static MauiAppBuilder AddAppDefaults(this MauiAppBuilder builder)
@@ -58,6 +60,14 @@ public static class AppDefaultsExtensions
         return builder;
     }
 
+    public static void InitOpenTelemetryServices(this MauiApp mauiApp)
+    {
+        mauiApp.Services.GetService<MeterProvider>();
+        mauiApp.Services.GetService<TracerProvider>();
+        // TODO: Uncomment when LoggerProvider is public, with OpenTelemetry.Api version 1.9.0
+        //mauiApp.Services.GetService<LoggerProvider>();
+    }
+
     private static MauiAppBuilder AddOpenTelemetryExporters(this MauiAppBuilder builder)
     {
         var useOtlpExporter = !string.IsNullOrWhiteSpace(builder.Configuration["OTEL_EXPORTER_OTLP_ENDPOINT"]);
@@ -66,9 +76,7 @@ public static class AppDefaultsExtensions
         {
             SetOpenTelemetryEnvironmentVariables();
 
-            builder.Services.Configure<OpenTelemetryLoggerOptions>(logging => logging.AddOtlpExporter());
-            builder.Services.ConfigureOpenTelemetryMeterProvider(metrics => metrics.AddOtlpExporter());
-            builder.Services.ConfigureOpenTelemetryTracerProvider(tracing => tracing.AddOtlpExporter());
+            builder.Services.AddOpenTelemetry().UseOtlpExporter();
         }
 
         // Uncomment the following lines to enable the Azure Monitor exporter (requires the Azure.Monitor.OpenTelemetry.Exporter package)

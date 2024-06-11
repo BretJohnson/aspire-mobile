@@ -37,7 +37,7 @@ public partial class MainPage : ContentPage
                 throw new InvalidOperationException("Forced error!");
             }
 
-            var weather = await _weatherApiClient.GetWeatherAsync(_closingCts.Token);
+            var weather = await _weatherApiClient.GetWeatherAsync(cancellationToken:_closingCts.Token);
             dgWeather.ItemsSource = weather;
             dgWeather.IsVisible = true;
         }
