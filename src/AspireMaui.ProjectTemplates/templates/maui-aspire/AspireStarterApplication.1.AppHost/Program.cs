@@ -8,6 +8,7 @@ var apiService = builder.AddProject<Projects.AspireStarterApplication__1_ApiServ
 
 #if IncludeWeb
 builder.AddProject<Projects.AspireStarterApplication__1_Web>("webfrontend")
+    .WithExternalHttpEndpoints()
 #if UseRedisCache
     .WithReference(cache)
 #endif
