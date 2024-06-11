@@ -36,6 +36,8 @@ public static class MauiProgram
         mauiAppBuilder.Services.AddHttpClient<WeatherApiClient>(client => client.BaseAddress = new($"{scheme}://apiservice"));
         mauiAppBuilder.Services.AddSingleton<MainPage>();
 
-        return mauiAppBuilder.Build();
+        MauiApp mauiApp = mauiAppBuilder.Build();
+        mauiApp.InitOpenTelemetryServices();
+        return mauiApp;
     }
 }
