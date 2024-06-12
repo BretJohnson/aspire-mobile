@@ -4,6 +4,7 @@
         <TargetFrameworks>net8.0</TargetFrameworks>
         <UseMaui>true</UseMaui>
         <UseMauiCompat>false</UseMauiCompat>
+        <SingleProject>true</SingleProject>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
 
