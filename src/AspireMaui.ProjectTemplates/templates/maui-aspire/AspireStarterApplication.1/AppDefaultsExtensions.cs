@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Logging;
 using OpenTelemetry;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Trace;
@@ -24,7 +26,21 @@ public static class AppDefaultsExtensions
             http.AddServiceDiscovery();
         });
 
+        builder.Services.TryAddEnumerable(
+            ServiceDescriptor.Transient<IMauiInitializeService, OpenTelemetryInitializer>(_ => new OpenTelemetryInitializer()));
+
         return builder;
+    }
+
+    class OpenTelemetryInitializer : IMauiInitializeService
+    {
+        public void Initialize(IServiceProvider services)
+        {
+            services.GetService<MeterProvider>();
+            services.GetService<TracerProvider>();
+            // TODO: Uncomment when LoggerProvider is public, with OpenTelemetry.Api version 1.9.0
+            //services.GetService<LoggerProvider>();
+        }
     }
 
     public static MauiAppBuilder ConfigureAppOpenTelemetry(this MauiAppBuilder builder)
@@ -60,21 +76,13 @@ public static class AppDefaultsExtensions
         return builder;
     }
 
-    public static void InitOpenTelemetryServices(this MauiApp mauiApp)
-    {
-        mauiApp.Services.GetService<MeterProvider>();
-        mauiApp.Services.GetService<TracerProvider>();
-        // TODO: Uncomment when LoggerProvider is public, with OpenTelemetry.Api version 1.9.0
-        //mauiApp.Services.GetService<LoggerProvider>();
-    }
-
     private static MauiAppBuilder AddOpenTelemetryExporters(this MauiAppBuilder builder)
     {
         var useOtlpExporter = !string.IsNullOrWhiteSpace(builder.Configuration["OTEL_EXPORTER_OTLP_ENDPOINT"]);
 
         if (useOtlpExporter)
         {
-            SetOpenTelemetryEnvironmentVariables();
+            builder.SetOpenTelemetryEnvironmentVariables();
 
             builder.Services.AddOpenTelemetry().UseOtlpExporter();
         }
@@ -86,9 +94,10 @@ public static class AppDefaultsExtensions
         return builder;
     }
 
-    private static void SetOpenTelemetryEnvironmentVariables()
+    private static void SetOpenTelemetryEnvironmentVariables(this MauiAppBuilder builder)
     {
-        foreach (KeyValuePair<string, string> setting in AspireAppSettings.Settings)
+        var settings = builder.Configuration.AsEnumerable();
+        foreach (var setting in settings)
         {
             if (setting.Key.StartsWith("OTEL_"))
             {
